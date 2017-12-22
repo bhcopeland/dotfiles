@@ -1,0 +1,7 @@
+#    { "full_text" : "${if_running clementine} \
+#    ${if_match "${exec conkyClementine --datatype=ST}" == "Playing"} \
+#    ${font Droid Sans:bold:size=10}${color0}   ${exec conkyClementine --datatype=AR | tr -d '"'} - ${exec conkyClementine | tr -d '"'} (${exec conkyClementine --datatype=BR} kbps) \
+#    ${else}  ${endif}${endif}" , "color" : "\#f2f0ec" },
+
+#   ${if_match "${mpd_status}" != "Stopped"}{ "full_text" : " ${mpd_artist} (${mpd_bitrate}kbps ${mpd_bar}) ", "color" : "\#d466138"},${endif}
+

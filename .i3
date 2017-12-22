@@ -1,1 +1,0 @@
-/home/ben/ownCloud/dotfiles/.i3

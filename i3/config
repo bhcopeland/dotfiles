@@ -1,0 +1,320 @@
+# i3 config file (v4)
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+#
+# This config file uses keycodes (bindsym) and was written for the QWERTY
+# layout.
+#
+# To get a config file with the same key positions, but for your current
+# layout, use the i3-config-wizard
+#
+
+#set $mod Mod4
+#set $mod mod1
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+font pango:DejaVu Sans Mono 10
+
+#font pango:Terminus 14
+# Before i3 v4.8, we used to recommend this one as the default:
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# The font above is very space-efficient, that is, it looks good, sharp and
+# clear in small sizes. However, its unicode glyph coverage is limited, the old
+# X core fonts rendering does not support right-to-left and this being a bitmap
+# font, it doesn’t scale on retina/hidpi displays.
+
+# use these keys for focus, movement, and resize directions when reaching for
+# the arrows is not convenient
+set $up l
+set $down k
+set $left j
+set $right semicolon
+
+# use Mouse+Mod4 to drag floating windows to their wanted position
+floating_modifier Mod4
+
+# start a terminal
+bindsym Mod4+Return exec i3-sensible-terminal
+
+# kill focused window
+bindsym Mod4+Shift+q kill
+
+# start dmenu (a program launcher)
+#bindsym Mod4+d exec dmenu_run
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+#bindsym Mod4+d exec --no-startup-id i3-dmenu-desktop
+
+#bindsym Mod4+d exec exec rofi -show run -lines 3 -eh 2 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
+
+bindsym Mod4+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu -i -p "run:" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "iconsolata 15"'
+#bindsym F7 exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu -i -p "run:" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "iconsolata 15"'
+
+#bindsym Mod4+d exec --no-startup-id rofi -show drun
+
+# change focus
+bindsym Mod4+$left focus left
+bindsym Mod4+$down focus down
+bindsym Mod4+$up focus up
+bindsym Mod4+$right focus right
+
+# alternatively, you can use the cursor keys:
+bindsym Mod4+Left focus left
+bindsym Mod4+Down focus down
+bindsym Mod4+Up focus up
+bindsym Mod4+Right focus right
+
+# move focused window
+bindsym Mod4+Shift+$left move left
+bindsym Mod4+Shift+$down move down
+bindsym Mod4+Shift+$up move up
+bindsym Mod4+Shift+$right move right
+
+# alternatively, you can use the cursor keys:
+bindsym Mod4+Shift+Left move left
+bindsym Mod4+Shift+Down move down
+bindsym Mod4+Shift+Up move up
+bindsym Mod4+Shift+Right move right
+
+# split in horizontal orientation
+bindsym Mod4+h split h
+
+# split in vertical orientation
+bindsym Mod4+v split v
+
+# enter fullscreen mode for the focused container
+bindsym Mod4+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym Mod4+s layout stacking
+bindsym Mod4+w layout tabbed
+bindsym Mod4+e layout toggle split
+
+# toggle tiling / floating
+bindsym Mod4+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym Mod4+space focus mode_toggle
+
+# focus the parent container
+bindsym Mod4+a focus parent
+
+# focus the child container
+#bindsym Mod4+d focus child
+
+# move the currently focused window to the scratchpad
+bindsym Mod4+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym Mod4+minus scratchpad show
+
+# sticky windows
+bindsym Mod4+shift+s sticky toggle
+
+# ASSIGN WORKSPACE VARIABLES
+set $ws1 "1  "
+set $ws2 "2  "
+set $ws3 "3  "
+set $ws4 "4  "
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9
+set $ws10 "10 "
+
+
+# switch to workspace
+bindsym Mod4+1 workspace $ws1
+bindsym Mod4+2 workspace $ws2
+bindsym Mod4+3 workspace $ws3
+bindsym Mod4+4 workspace $ws4
+bindsym Mod4+5 workspace $ws5
+bindsym Mod4+6 workspace $ws6
+bindsym Mod4+7 workspace $ws7
+bindsym Mod4+8 workspace $ws8
+bindsym Mod4+9 workspace $ws9
+bindsym Mod4+0 workspace $ws10
+
+# move focused container to workspace
+bindsym Mod4+Shift+1 move container to workspace $ws1
+bindsym Mod4+Shift+2 move container to workspace $ws2
+bindsym Mod4+Shift+3 move container to workspace $ws3
+bindsym Mod4+Shift+4 move container to workspace $ws4
+bindsym Mod4+Shift+5 move container to workspace $ws5
+bindsym Mod4+Shift+6 move container to workspace $ws6
+bindsym Mod4+Shift+7 move container to workspace $ws7
+bindsym Mod4+Shift+8 move container to workspace $ws8
+bindsym Mod4+Shift+9 move container to workspace $ws9
+bindsym Mod4+Shift+0 move container to workspace $ws10
+
+# exec startup apps
+exec --no-startup-id i3-msg 'workspace $ws1; exec google-chrome-stable &'
+#exec --no-startup-id i3-msg 'workspace $ws2; exec termite'
+#exec --no-startup-id i3-msg 'workspace $ws3; exec termite'
+
+# Windows in specific monitors
+
+assign [class="Chromium"] $ws1
+assign [class="google-chrome-stable"] $ws1
+assign [class="pycharm"] $ws4
+assign [class="idea"] $ws3
+assign [class="steam"] $ws10
+assign [class="weechat"] $ws3
+assign [class="pidgin"] $ws3
+for_window [title="(?i)chat$"] move to workspace $ws4
+for_window [class="Steam"] move to workspace $ws10
+for_window [class="(?i)gthumb$"] move to workspace $ws1
+
+# Floating windows
+for_window [window_role="pop-up"] floating enable
+for_window [class="Pidgin"] floating enable, move scratchpad, scratchpad show, move to workspace $ws4
+for_window [class="Skype"] floating enable, move to workspace $ws4
+for_window [class="Solaar"] floating enable
+for_window [class="Lxappearance"] floating enable
+for_window [instance="Steam"] floating enable, move scratchpad, scratchpad show, move to workspace $ws10
+#for_window [class="Steam" title="^Steam$"] floating disable
+for_window [instance="whatpulse"] floating enable
+for_window [instance="clementine"] floating enable
+for_window [instance="transmission"] floating enable
+for_window [instance="pavucontrol"] floating enable
+for_window [instance="xarchiver"] floating enable
+#for_window [class="^Spotify$"] floating enable
+for_window [class="(?i)variety$"] floating enable
+for_window [class="Thunar"] floating enable
+for_window [class="skypeforlinux"] floating enable
+for_window [class="Nautilus"] floating enable
+
+
+# reload the configuration file
+bindsym Mod4+Shift+w reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym Mod4+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym Mod4+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+set $bg-color            #000000
+set $inactive-bg-color   #2f343f
+set $text-color          #f3f4f5
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #E53935
+
+# window colors
+#                       border              background         text                 indicator
+client.focused          $bg-color           $bg-color          $text-color          #00ff00
+client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
+client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
+
+hide_edge_borders both
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym $left       resize shrink width 10 px or 10 ppt
+        bindsym $down       resize grow height 10 px or 10 ppt
+        bindsym $up         resize shrink height 10 px or 10 ppt
+        bindsym $right      resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left        resize shrink width 10 px or 10 ppt
+        bindsym Down        resize grow height 10 px or 10 ppt
+        bindsym Up          resize shrink height 10 px or 10 ppt
+        bindsym Right       resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym Mod4+r mode "resize"
+bindsym Mod4+u [urgent=latest] focus
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+#
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+#exec_always --no-startup-id polybar main
+#bar {
+#     position bottom
+#     workspace_buttons yes
+#     status_command i3status
+#     status_command /home/ben/.i3/i3status-conky-launcher
+#	colors {
+#		background $bg-color
+#	    	separator #757575
+		#                  border             background         text
+#		focused_workspace  $bg-color          $bg-color          $text-color
+#		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+#		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+#	}
+#}
+
+# Startup Programs
+#exec xfce4-volumed
+#exec xfce4-volumed-pulse
+exec --no-startup-id dunst
+exec --no-startup-id nm-applet
+exec --no-startup-id gnome-keyring-daemon
+#exec --no-startup-id whatpulse -delaystartup
+exec_always setxkbmap gb
+exec --no-startup-id pidgin
+#exec compton -b
+#exec redshift-gtk
+exec --no-startup-id caffeine
+exec --no-startup-id variety
+exec --no-startup-id owncloud
+exec --no-startup-id screencloud
+exec --no-startup-id pasystray
+exec --no-startup-id imwheel -b 45
+#exec_always sudo /etc/X11/xinit/xinitrc.d/10-infinality-settings.sh
+#exec "sh -c 'sleep 10; exec --no-startup-id pasystray'"
+#exec "sh -c 'sleep 10; exec --no-startup-id pidgin'"
+exec feh --bg-center /usr/share/archlinux/wallpaper/archlinux-simplyblack.png
+
+# Key bindings
+bindsym Mod4+m exec variety -n
+bindsym Mod4+Shift+m exec variety -t
+bindsym Ctrl+Shift+e exec nautilus
+bindsym Ctrl+Shift+3 imgur-screenshot
+
+# Screen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 3 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 3 # decrease screen brightness
+
+# Keyboard LED brightness
+bindsym XF86KbdBrightnessDown exec --no-startup-id "cd /sys/class/leds/smc::kbd_backlight; cur=$(cat brightness); cur=$((cur-5)); if [ $cur -lt 0 ]; then cur=0; fi; echo $cur | sudo tee brightness "
+bindsym XF86KbdBrightnessUp   exec --no-startup-id "cd /sys/class/leds/smc::kbd_backlight; cur=$(cat brightness); cur=$((cur+5)); if [ $cur -gt 255 ]; then cur=255; fi; echo $cur | sudo tee brightness "
+
+# Volume
+bindsym XF86AudioRaiseVolume exec amixer set Master -q 5%+
+bindsym XF86AudioLowerVolume exec amixer set Master -q 5%-
+bindsym XF86AudioMute exec amixer -q set Master toggle
+
+# Screensaver / Locking / Shutdown
+bindsym Mod4+shift+z exec i3lock-wrapper
+exec_always xautolock -time 10 -locker i3lock-wrapper -detectsleep -lockaftersleep
+exec xautolock -time 10 -locker 'i3lock-wrapper' -detectsleep -lockaftersleep &
+#exec /usr/bin/xautolock -time 3 -locker 'i3lock-wrapper' -detectsleep &
+# Shutdown keys
+bindsym XF86PowerOff exec /home/ben/.i3/shutdown.sh
+bindsym XF86Sleep exec /home/ben/.i3/shutdown.sh
+bindsym Mod4+z exec /home/ben/.i3/shutdown.sh
+
+
+# Audio
+bindsym XF86AudioPrev exec mpc prev
+bindsym XF86AudioNext exec mpc next
+bindsym XF86AudioPlay exec /home/ben/.i3/mpc_toggle.sh
+
+for_window [class="^Termite$"]        border normal 1

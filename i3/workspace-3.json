@@ -1,0 +1,96 @@
+// vim:ts=4:sw=4:et
+{
+    // tabbed split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "tabbed",
+    "percent": 1,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "none",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 502,
+               "width": 802,
+               "x": 0,
+               "y": 0
+            },
+            "name": "ssh ben@bcc.linaro.org -t tmux a -d",
+            "percent": 0.5,
+            "swallows": [
+               {
+               // "class": "^Terminator$",
+               // "instance": "^terminator$",
+               // "title": "^ssh\\ ben\\@bcc\\.linaro\\.org\\ \\-t\\ tmux\\ a\\ \\-d$",
+               // "transient_for": "^$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "none",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 502,
+               "width": 802,
+               "x": 0,
+               "y": 0
+            },
+            "name": "Miro - The Cure (Sunshine mix)",
+            "percent": 0.5,
+            "swallows": [
+               {
+               // "class": "^Terminator$",
+               // "instance": "^terminator$",
+               // "title": "^Miro\\ \\-\\ The\\ Cure\\ \\(Sunshine\\ mix\\)$",
+               // "transient_for": "^$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    // floating_con with 1 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splith",
+    "percent": null,
+    "rect": {
+       "height": 596,
+       "width": 500,
+       "x": 2614,
+       "y": 182
+    },
+    "type": "floating_con",
+    "nodes": [
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "user_on",
+            "geometry": {
+               "height": 574,
+               "width": 496,
+               "x": 0,
+               "y": 0
+            },
+            "name": "Jo Davies",
+            "percent": 1,
+            "swallows": [
+               {
+               // "class": "^Pidgin$",
+               // "instance": "^Pidgin$",
+               // "title": "^Jo\\ Davies$",
+               // "transient_for": "^$",
+               // "window_role": "^conversation$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
