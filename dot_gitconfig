@@ -1,0 +1,19 @@
+[user]
+	email = ben.copeland@linaro.org
+	name = Ben Copeland
+[push]
+	default = simple
+[gitreview]
+	username = ben.copeland
+[pull]
+	rebase = true
+[pack]
+	windowMemory = 100m
+	SizeLimit = 100m
+	threads = 12
+	window = 0
+	packSizeLimit = 100m
+[color]
+	ui = auto
+[format]
+	signoff = true

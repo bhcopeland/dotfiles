@@ -1,0 +1,25 @@
+localhost:
+  token: {{ (secret "lavacli.token.localhost") }}
+  uri: http://localhost/RPC2
+  username: admin
+
+default-lava-dev:
+  token: {{ (secret "lavacli.token.default-lava-dev") }}
+  uri: https://lava.dev.deployments.linaro.org/RPC2
+  username: ben.copeland
+
+lkft-staging:
+  token: {{ (secret "lavacli.token.lkft-staging") }}
+  uri: https://lkft-staging.validation.linaro.org/RPC2
+  username: ben.copeland
+
+validation-staging:
+  token: {{ (secret "lavacli.token.validation-staging") }}
+  uri: https://staging.validation.linaro.org/RPC2
+  username: ben.copeland
+
+lkft-prod:
+  token: {{ (secret "lavacli.token.lkft-prod") }}
+  uri: https://lkft.validation.linaro.org/RPC2
+  username: ben.copeland
+
